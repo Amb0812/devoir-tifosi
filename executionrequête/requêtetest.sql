@@ -106,3 +106,17 @@ WHERE c.id_ingredient IS NULL;
 -- nom
 -- Salami
 -- Tomate cerise
+
+-- 10) Afficher la liste des focaccia qui n'ont pas de champignons
+SELECT f.nom
+FROM focaccia f 
+LEFT JOIN comprend c ON f.id_focaccia = c.id_focaccia
+LEFT JOIN ingredient i ON i.id_ingredient = c.id_ingredient AND i.nom = 'Champignon'
+WHERE i.id_ingredient IS NULL;
+
+-- Résultat attendu : la liste des noms focaccias : hawaienne et américaine
+
+-- résultat obtenu : 
+-- nom: Mozaccia x8   Gorgonzollaccia x7   Raclaccia x6   Emmentalaccia x3
+
+-- commentaires: je n'ai pas eu le résultat attendu
