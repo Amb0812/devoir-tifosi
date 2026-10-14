@@ -66,3 +66,43 @@ GROUP BY f.id_focaccia, f.nom;
 --Hawaienne            9
 --Américaine           8
 --Paysanne            12
+
+-- 7) Afficher le nom de la focaccia qui a le plus d'ingrédients
+SELECT f.nom, COUNT(c.id_ingredient) AS nombre_ingredients
+FROM focaccia f -- à partir de la tab focaccia
+JOIN comprend c ON f.id_focaccia = c.id_focaccia -- dans la tab comprend, on va coller chaque id_focaccia des deux côtés
+GROUP BY f.id_focaccia, f.nom -- On regroupe les noms des mêmes focaccias en un paquet et on compte dans chaque paquet
+ORDER BY nombre_ingredients DESC -- Ici on range du plus grand au plus petit, (ASC =/ DESC)
+LIMIT 1 -- Ici on va garder que la première ligne du résultat
+
+-- Résultat attendu et obtenu : 
+-- nom         nombre_ingredients
+-- paysanne         12
+
+
+-- 8) Afficher la liste des focaccias qui contiennent de l'ail,
+SELECT f.nom 
+FROM focaccia f
+JOIN comprend c ON f.id_focaccia = c.id_focaccia
+JOIN ingredient i ON c.id_ingredient = i.id_ingredient
+WHERE i.nom = 'Ail';
+
+-- résultat attendu et obtenu: 
+
+-- nom
+-- Mozaccia
+-- Gorgonzollaccia
+-- Raclaccia
+-- Paysanne
+
+-- 9) Afficher la liste des ingrédients inutilisés,
+SELECT i.nom
+FROM ingredient i
+LEFT JOIN comprend c ON i.id_ingredient = c.id_ingredient
+WHERE c.id_ingredient IS NULL;
+
+-- Résultat attendu et obtenu : 
+
+-- nom
+-- Salami
+-- Tomate cerise
