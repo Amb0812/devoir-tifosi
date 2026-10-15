@@ -6,5 +6,6 @@ CREATE TABLE menu (
     nom VARCHAR(50) NOT NULL UNIQUE,
     prix DECIMAL(5,2) NOT NULL,
     id_focaccia INT NOT NULL,
+    PRIMARY KEY (id_menu),
     FOREIGN KEY (id_focaccia) REFERENCES focaccia(id_focaccia)
 );

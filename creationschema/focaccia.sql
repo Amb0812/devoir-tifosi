@@ -7,9 +7,3 @@ CREATE TABLE focaccia (
     prix DECIMAL(5,2) NOT NULL,
     PRIMARY KEY (id_focaccia)
 );
-
-
-
-
-
-

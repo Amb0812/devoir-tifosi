@@ -6,11 +6,3 @@ CREATE TABLE marque (
     nom VARCHAR(50) NOT NULL UNIQUE,
     PRIMARY KEY (id_marque)
 );
-
-
-
-
-
-
-
-

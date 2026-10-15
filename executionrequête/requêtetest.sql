@@ -41,7 +41,7 @@ JOIN comprend AS c ON f.id_focaccia = c.id_focaccia
 JOIN ingredient AS i ON c.id_ingredient = i.id_ingredient
 WHERE f.nom = 'Raclaccia';
 
--- Resultat attendu: je m'attendais à ce résultat, mais pas qu'elles soient dans l'ordre alphabétique.
+-- Resultat attendu: je m'attendais à ce résultat, mais pas que les éléments soient dans l'ordre alphabétique.
 
 -- Résultat obtenu : 
 
@@ -115,7 +115,7 @@ WHERE c.id_ingredient IS NULL;
 
 -- 10) Afficher la liste des focaccia qui n'ont pas de champignons
 SELECT f.nom
-FROM focaccia f 
+FROM focaccia AS f 
 LEFT JOIN comprend c ON f.id_focaccia = c.id_focaccia
 LEFT JOIN ingredient i ON i.id_ingredient = c.id_ingredient AND i.nom = 'Champignon'
 WHERE i.id_ingredient IS NULL;

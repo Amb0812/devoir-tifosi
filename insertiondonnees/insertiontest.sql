@@ -7,7 +7,7 @@ INSERT INTO marque (id_marque, nom) VALUES
 (4, 'Pepsico');
 
 -- Insertion données à partir fichier Excel "ingredients"
-INSERT INTO ingredient (id_ingredient, nom) VALUES
+INSERT INTO ingredient (id_ingredient, nom) VALUES      -- on insére les données dans leur colonnes respectives dans la table "ingredient"
 (1, 'Ail'),
 (2, 'Ananas'),
 (3, 'Artichaut'),
@@ -46,7 +46,7 @@ INSERT INTO focaccia (id_focaccia, nom, prix) VALUES
 (8, 'Paysanne', 12.80);
 
 -- Insertion donnees à partir fichier excel "boisson"
-INSERT INTO `boisson` (`id_boisson`, `nom`, `id_marque`) VALUES
+INSERT INTO boisson (id_boisson, nom, id_marque) VALUES
 (1, 'Coca-cola zéro', 1),
 (2, 'Coca-cola original', 1),
 (3, 'Fanta citron', 1),
@@ -61,7 +61,7 @@ INSERT INTO `boisson` (`id_boisson`, `nom`, `id_marque`) VALUES
 (12, 'Eau de source', 2);
 
 
--- Insertion donnees à partir des fichiers excel dans la table "comprend"
+-- Insertion des donnees à partir des fichiers excel 
 INSERT INTO comprend (id_focaccia, id_ingredient, quantite) VALUES
 (1, 1, 2),
 (1, 3, 20),

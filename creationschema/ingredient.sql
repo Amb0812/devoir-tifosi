@@ -6,8 +6,3 @@ CREATE TABLE ingredient (
     nom VARCHAR(50) NOT NULL UNIQUE,
     PRIMARY KEY (id_ingredient)
 );
-
-
-
-
-

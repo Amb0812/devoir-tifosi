@@ -9,7 +9,3 @@ CREATE TABLE comprend (
     FOREIGN KEY (id_focaccia) REFERENCES focaccia(id_focaccia),
     FOREIGN KEY (id_ingredient) REFERENCES ingredient(id_ingredient)
 );
-
-
-
-
